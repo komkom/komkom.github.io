@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no">
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700" rel="stylesheet">
+		<link rel="stylesheet" href="static/styles.css">
+		<script src="https://code.jquery.com/jquery-2.x-git.js"></script>
+		<script src="static/textarea.js"></script>
+		<script src="static/select.js"></script>
+		<script src="static/main.js" defer></script>
+		<title>jsonc</title>
+
+		<script>
+
+function selectEditorLine(line) {
+	var editor = document.getElementById('edit')
+		selectTextareaLine(editor,line)
+}
+
+$(function() {
+
+	//$.getScript("static/main.js");
+	initTextArea();
+
+	$("#clear").click(function() {
+
+		$("#edit").val("")
+			$("#editjson").text("")
+
+			initTextArea();
+
+	});
+});
+
+		</script>
+
+		<style>
+::selection {
+	background-color: LightCoral;
+	color: white;
+}
+
+		</style>
+	</head>
+	<body>
+		<header>
+			<div class="logo">
+				<img src="static/jsonc-logo.svg" alt="JsonC logo">
+			</div>
+		</header>
+
+		<div class="container">
+			<section class="intro">
+				<h1>jsonc</h1>
+				<p>A Json like file format with comments</p>
+			</section>
+			<section class="example">
+				<div class="code-mess">
+					<span>Drop your jsonc here:</span>
+					<textarea id="edit" rows="8" cols="80">
+						{
+						/*
+						jsonc example
+						hit Format and check the json output
+						*/
+
+						// forgiving syntax
+						hey:  [this  needs  no  commas]
+
+						// unquoted values
+						give:  [it,  a,  shot]
+
+						/* and lots comments :) */
+
+						// try it for yourself
+
+						"this":  {
+						"is":  "also",
+						"just":  "a"
+						},
+						"json" : "formatter"
+						}
+					</textarea>
+					<div id="format-button">Format</div>
+				</div>
+				<div class="code-neat" >
+					<span>Get your formatted json here:</span>
+					<pre id="editjson"></pre>
+				</div>
+			</section>
+
+			<div class="error-box" id="errormsg"></div>
+
+			<section class="installation">
+				<h2>Proposal</h2>
+				<p>Jsonc is a simplified json format which allows comments and unquoted values delimited by whitespace. A jsonc formatted file can be transformed to a json file. Comments will be stripped out and quotes added. <br><br>
+					Any valid json is also a valid jsonc - but this goes only in one direction.</p>
+
+				<h2>Why</h2>
+				<p>Json formatted files could be very handy to be used as config files. But the lack of comments and the redundancy of the format hurts readability. Standard formatting like <a href="https://golang.org/cmd/gofmt/" target="_blank">gofmt</a> would also be very handy.</p>
+
+
+				<h2>Disclamer</h2>
+				<p>This is just a proposal. Any help like bugfixing, improvements or suggestions are welcome.</p>
+			</section>
+
+			<footer>
+				<p><a href="https://github.com/komkom/jsonc" target="_blank">get involved</a></p>
+				<a class="github-button" href="https://github.com/komkom/jsonc" data-icon="octicon-star" aria-label="Star komkom/jsonc on GitHub">Star</a>
+				<a class="github-button" href="https://github.com/komkom/jsonc/subscription" data-icon="octicon-eye" aria-label="Watch komkom/jsonc on GitHub">Watch</a>
+				<a class="github-button" href="https://github.com/komkom/jsonc/fork" data-icon="octicon-repo-forked" aria-label="Fork komkom/jsonc on GitHub">Fork</a>
+				<a class="github-button" href="https://github.com/komkom" aria-label="Follow @komkom on GitHub">Follow @komkom</a>
+			</footer>
+
+		</div>
+
+		<script async defer src="https://buttons.github.io/buttons.js"></script>
+	</body>
+</html>
