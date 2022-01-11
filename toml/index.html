@@ -5,10 +5,10 @@
 		<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700" rel="stylesheet">
 		<link rel="stylesheet" href="styles.css">
 		<script src="https://code.jquery.com/jquery-2.x-git.js"></script>
-		<script src="wasm_exec.js"></script>
+		<script src="wasm_exec17.js"></script>
 		<script>
 			const go = new Go();
-WebAssembly.instantiateStreaming(fetch("toml.wasm"), go.importObject).then((result) => {
+WebAssembly.instantiateStreaming(fetch("toml2.wasm"), go.importObject).then((result) => {
 	go.run(result.instance);
 });
 		</script>
@@ -22,15 +22,15 @@ WebAssembly.instantiateStreaming(fetch("toml.wasm"), go.importObject).then((resu
 
 		<div class="container">
 			<section class="intro">
-				<h1>TOML v1.0.0</h1>
+				<h1>TOML v1.0.0 Parser</h1>
 				<p>A toml parser and JSON transformer written in go</p>
 				<p>To the <a href="https://github.com/komkom/toml">source</a></p>
 			</section>
 			<div>
-				<button class="button" type="button" onclick="format()">To JSON</button>
-				<button class="button" type="button" onclick="clear2()">clear</button>
+				<button class="button" type="button" onclick="format()">to JSON</button>
+				<button class="button" type="button" onclick="clearScreen()">clear</button>
 			</div>
-			<div class="error-box" id="errormsg"></div>
+			<div class="error-box" id="errormsg" hidden="true"></div>
 			<section class="example">
 				<div class="code-mess">
 					<span>Drop your toml here:</span>
@@ -68,7 +68,7 @@ role = "backend"
 					<pre id="json"></pre>
 				</div>
 			</section>
-			<div>v.0.0.1</p>
+			<div>v.0.1.0</p>
 			</div>
 
 			<script async defer src="https://buttons.github.io/buttons.js"></script>
