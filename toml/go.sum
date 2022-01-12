@@ -1,6 +1,8 @@
 github.com/davecgh/go-spew v1.1.0/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/komkom/toml v0.0.0-20211215114140-3c8ee9dae4eb h1:36vR6EfWjL57Lxz7wg0cl5CEKJtVzCcGZGIZF/qmEb8=
 github.com/komkom/toml v0.0.0-20211215114140-3c8ee9dae4eb/go.mod h1:wLcNqnyr6riTbnFObg4o2/GemTCso9AnsUdLsMsdspw=
+github.com/komkom/toml v0.1.1 h1:DmLdaV7v1m+tXoccHpHQluGx0T9iB5ob8zJI2DKMYNo=
+github.com/komkom/toml v0.1.1/go.mod h1:cgnL/ntRyMHaZuDy9wREJHWY1Cb2HEINK7U0YhpcTa8=
 github.com/pkg/errors v0.9.1 h1:FEBLx1zS214owpjy7qsBeixbURkuhQAwrK5UwLGTwt4=
 github.com/pkg/errors v0.9.1/go.mod h1:bwawxfHBFNV+L2hUp1rHADufV3IMtnDRdf1r5NINEl0=
 github.com/pmezard/go-difflib v1.0.0/go.mod h1:iKH77koFhYxTK1pcRnkKkqfTogsbg7gZNVY4sRDYZ/4=

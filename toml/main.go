@@ -49,14 +49,14 @@ func format() {
 	data, err := io.ReadAll(tomlReader)
 	if err != nil {
 		errMsg.Set(`hidden`, false)
-		errMsg.Set(`innerHTML`, err.Error())
+		errMsg.Set(`innerHTML`, fmt.Errorf("toml-error: %w", err).Error())
 		return
 	}
 
 	pjson, err := prettyJSON(data)
 	if err != nil {
 		errMsg.Set(`hidden`, false)
-		errMsg.Set(`innerHTML`, err.Error())
+		errMsg.Set(`innerHTML`, fmt.Errorf("json-error: %w", err).Error())
 		return
 	}
 
